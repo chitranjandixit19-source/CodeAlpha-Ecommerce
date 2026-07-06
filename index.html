@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple E-Commerce Store</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">ShopNow</div>
+    <nav class="nav">
+      <a href="login.html">Login/Sign up</a>
+      <a href="#products">Products</a>
+      <a href="#cart-section">Cart (<span id="cart-count">0</span>)</a>
+      <a href="#checkout">Checkout</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Welcome to ShopNow</h1>
+      <p>Browse products, add them to your cart, and place an order.</p>
+    </section>
+
+    <section id="products">
+      <div class="section-title">
+        <h2>Products</h2>
+        <div class="search-wrap">
+          <input id="searchInput" type="text" placeholder="Search products..." />
+        </div>
+      </div>
+      <div id="product-list" class="product-grid"></div>
+    </section>
+
+    <section id="cart-section" class="cart-section">
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <p><strong>Items:</strong> <span id="total-items">0</span></p>
+        <p><strong>Total:</strong> ₹<span id="cart-total">0</span></p>
+        <button id="clearCartBtn" class="btn btn-outline">Clear Cart</button>
+      </div>
+    </section>
+
+    <section id="checkout" class="checkout-section">
+      <h2>Checkout</h2>
+      <form id="checkoutForm" class="checkout-form">
+        <div class="form-row">
+          <label for="name">Full Name</label>
+          <input id="name" type="text" required />
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" type="email" required />
+        </div>
+        <div class="form-row">
+          <label for="address">Address</label>
+          <textarea id="address" rows="4" required></textarea>
+        </div>
+        <div class="form-row">
+          <label for="payment">Payment Method</label>
+          <select id="payment" required>
+            <option value="cod">Cash on Delivery</option>
+            <option value="card">Card</option>
+            <option value="upi">UPI</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Place Order</button>
+      </form>
+      <div id="orderMessage" class="order-message"></div>
+    </section>
+  </main>
+
+  <div id="productModal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModalBtn" class="modal-close">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
